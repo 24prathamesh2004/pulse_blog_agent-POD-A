@@ -1,0 +1,39 @@
+{
+  "name": "pulse-content-discovery-pipeline",
+  "version": "1.0.0",
+  "description": "Content Discovery Pipeline - Keyword, Discovery, and Scraper Agents",
+  "author": "Developer A",
+  "license": "MIT",
+  "type": "module",
+  "main": "index.ts",
+  "scripts": {
+    "demo:keyword": "tsx keyword-agent/index.ts",
+    "demo:discovery": "tsx discovery-agent/index.ts",
+    "demo:scraper": "tsx scraper-agent/index.ts",
+    "demo:pipeline": "tsx demo-pipeline.ts",
+    "db:setup": "tsx database/setup.ts",
+    "db:stats": "tsx database/stats.ts",
+    "db:run-schema": "tsx database/run-schema.ts",
+    "db:create": "tsx database/create-tables-now.ts",
+    "test": "echo 'Tests not yet implemented' && exit 0"
+  },
+  "dependencies": {
+    "@mozilla/readability": "^0.6.0",
+    "@supabase/supabase-js": "^2.105.1",
+    "cheerio": "^1.2.0",
+    "dotenv": "^16.4.5",
+    "duck-duck-scrape": "^2.2.7",
+    "google-trends-api": "^4.9.2",
+    "jsdom": "^29.1.1",
+    "rss-parser": "^3.13.0",
+    "undici": "^8.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.16.5",
+    "tsx": "^4.7.0",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
