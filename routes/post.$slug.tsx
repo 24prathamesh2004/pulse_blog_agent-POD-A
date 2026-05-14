@@ -6,6 +6,18 @@ import { AskPanel } from "@/components/ask-panel";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
+/**
+ * Calculates the estimated reading time for a given text.
+ * Uses an average reading speed of 200 words per minute.
+ * Returns a human-friendly string like "3 min read" or "< 1 min read".
+ */
+function getEstimatedReadingTime(text: string | null | undefined): string {
+  if (!text) return "< 1 min read";
+  const wordCount = text.trim().split(/\s+/).filter(Boolean).length;
+  const minutes = Math.ceil(wordCount / 200);
+  return minutes <= 1 ? "1 min read" : `${minutes} min read`;
+}
+
 export const Route = createFileRoute("/post/$slug")({
   loader: async ({ params }) => {
     const data = await getPostBySlug({ data: { slug: params.slug } });
@@ -31,6 +43,7 @@ function PostPage() {
   const { post, related } = Route.useLoaderData();
   const p = post!;
   const isDraft = (p as any).isDraft;
+  const readingTime = getEstimatedReadingTime(p.body_md);
   
   return (
     <article>
@@ -67,6 +80,7 @@ function PostPage() {
           {p.subtitle && <p className="mt-6 text-lg md:text-2xl text-white/85 max-w-3xl font-display">{p.subtitle}</p>}
           <div className="mt-8 flex flex-wrap items-center gap-4 meta opacity-90">
             <span>{formatRelativeDate(p.published_at)}</span>
+            <span>📖 {readingTime}</span>
             {p.source_name && <span>via {p.source_name}</span>}
             {p.quality_score > 0 && <span>quality {p.quality_score}</span>}
           </div>
