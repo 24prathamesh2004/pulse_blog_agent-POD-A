@@ -65,25 +65,23 @@ All powered by **local LLMs** (Ollama) - no API costs, complete privacy! 🔒
 
 ## 🖼️ Demo
 
-### Homepage
-![Homepage](https://via.placeholder.com/1200x800/0f172a/ffffff?text=Homepage+Screenshot)
+### Users View
+![](./snapshots/users.png)
 *AI-curated stories with hero layout, featured articles, and live ticker*
 
-### Article View
-![Article](https://via.placeholder.com/1200x800/0f172a/ffffff?text=Article+View+Screenshot)
-*Clean reading experience with AI-generated summaries and takeaways*
-
-### Admin Newsroom
-![Admin](https://via.placeholder.com/1200x800/0f172a/ffffff?text=Admin+Panel+Screenshot)
+### Admin Only
 *Control center for managing agents, sources, and content*
+--
+![](./snapshots/admin1.png)
 
-### Analytics Dashboard
-![Analytics](https://via.placeholder.com/1200x800/0f172a/ffffff?text=Analytics+Dashboard+Screenshot)
-*Real-time insights into agent performance and content metrics*
+--
+![](./snapshots/admin2.png)
 
-### Ask AI Feature
-![Ask AI](https://via.placeholder.com/1200x800/0f172a/ffffff?text=Ask+AI+Screenshot)
-*RAG-powered Q&A about published articles*
+--
+![](./snapshots/admin3.png)
+
+--
+![](./snapshots/admin4.png)
 
 ---
 
@@ -215,12 +213,6 @@ Key tables:
 - **[Agent System Documentation](./AGENTS_DOCUMENTATION.md)** - Deep dive into agent architecture
 - **[Supabase Schema](./supabase/migrations/)** - Database structure
 - **[API Reference](#-api-reference)** - Server functions
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
